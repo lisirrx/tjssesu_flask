@@ -18,7 +18,7 @@ def index():
         session['skill'] = form.skill.data
         session['reason'] = form.reason.data
 
-        if Student.query.filter_by(id=form.id_code.data).all() is not None:
+        if Student.query.filter_by(id=form.id_code.data).first() is not None:
             flash(u'你已经完成报名')
             return redirect(url_for('main.index'))
 
