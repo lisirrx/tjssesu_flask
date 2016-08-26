@@ -5,6 +5,7 @@ from . import main
 from .forms import InputForm
 
 
+
 @main.route('/', methods=['GET', 'POST'])
 def index():
     form = InputForm()
@@ -29,7 +30,7 @@ def index():
         db.session.add(student)
         db.session.commit()
         return redirect(url_for('main.finish'))
-    return render_template('index.html', form=form, name=None)
+    return render_template('index.html', form=form, name=None, title = u'同济大学软件学院团学联')
 
 @main.route('/finsih', methods=['GET', 'POST'])
 def finish():
