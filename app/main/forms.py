@@ -20,7 +20,7 @@ class InputForm(Form):
 
     obey_swap = BooleanField('是否服从调剂', false_values='false')
     turn_major = BooleanField('是否有转专业意向', false_values='false')
-    
+
     former_job = StringField('曾任职务', validators=[Required()])
     skill = TextAreaField('爱好特长', validators=[Required()])
 
