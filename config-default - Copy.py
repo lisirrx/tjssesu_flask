@@ -36,7 +36,7 @@ class TestingConfig(Config):
 
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://flask:Sha0215=@localhost:3306/flask'
+    SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://username:password@localhost:port/database'
 
 
 config = {
