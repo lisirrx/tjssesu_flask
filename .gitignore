@@ -1,0 +1,16 @@
+.idea
+flask
+env/
+obj/
+data-dev.sqlite
+migrations/__pycache__/
+*.pyproj
+ptvs_virtualenv_proxy.py
+migrations/versions/__pycache__/
+bin/
+app/main/__pycache__/views.cpython-35.pyc
+app/main/__pycache__/
+app/__pycache__/
+__pycache__/
+web.config
+web.debug.config
