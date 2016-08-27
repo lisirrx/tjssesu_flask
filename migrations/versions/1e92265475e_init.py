@@ -1,13 +1,13 @@
-"""initial
+"""init
 
-Revision ID: 20caadbfe7d
+Revision ID: 1e92265475e
 Revises: None
-Create Date: 2016-08-26 23:39:45.452684
+Create Date: 2016-08-27 01:05:53.894214
 
 """
 
 # revision identifiers, used by Alembic.
-revision = '20caadbfe7d'
+revision = '1e92265475e'
 down_revision = None
 
 from alembic import op
@@ -19,11 +19,20 @@ def upgrade():
     op.create_table('student',
     sa.Column('id', sa.Unicode(), nullable=False),
     sa.Column('name', sa.Unicode(), nullable=True),
+    sa.Column('gender', sa.Unicode(), nullable=True),
+    sa.Column('phone_number', sa.Unicode(), nullable=True),
+    sa.Column('class_number', sa.Unicode(), nullable=True),
+    sa.Column('native_place', sa.Unicode(), nullable=True),
     sa.Column('email', sa.Unicode(), nullable=True),
     sa.Column('department1', sa.Unicode(), nullable=True),
     sa.Column('department2', sa.Unicode(), nullable=True),
     sa.Column('skill', sa.UnicodeText(), nullable=True),
+    sa.Column('former_job', sa.UnicodeText(), nullable=True),
+    sa.Column('former_experience', sa.UnicodeText(), nullable=True),
     sa.Column('reason', sa.UnicodeText(), nullable=True),
+    sa.Column('expection', sa.UnicodeText(), nullable=True),
+    sa.Column('obey_swap', sa.Boolean(), nullable=True),
+    sa.Column('turn_major', sa.Boolean(), nullable=True),
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('id')
     )
