@@ -22,6 +22,8 @@ class Student(db.Model):
 
     expection = db.Column(db.UnicodeText)
     
+    add_teams = db.Column(db.Unicode(20))
+    
     obey_swap = db.Column(db.Boolean)
     turn_major = db.Column(db.Boolean)
     def __repr__(self):

@@ -1,27 +1,29 @@
-{% extends "bootstrap/base.html" %}
+﻿{% extends "bootstrap/base.html" %}
 
-{% block title %}Flasky{% endblock %}
+{% block title %}同济大学软件学院团学联报名{% endblock %}
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}" type="image/x-icon">
+<link rel="icon" href="{{ url_for('static', filename='logo.ico') }}" type="image/x-icon">
+<style type="text/css">
+    #homepage{
+        font-family : Microsoft YaHei
+    }
+    #testpage{
+        font-family : Microsoft YaHei
+    }
+</style>
 {% endblock %}
 
 {% block navbar %}
 <div class="navbar navbar-inverse" role="navigation">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-            </button>
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">Flasky</a>
+
+            <a class="navbar-brand" href="{{ url_for('main.index') }}" id="homepage">同济大学软件学院团学联报名</a>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="{{ url_for('main.index') }}">Home</a></li>
-            </ul>
-        </div>
+
     </div>
 </div>
 {% endblock %}
@@ -35,10 +37,23 @@
     </div>
     {% endfor %}
 
-    {% block page_content %}{% endblock %}
-</div>
+    {% block page_content %}
+    {% endblock %}
+    <div class="page-header">
+        <h1>           </h1>
+    </div>
+    <footer class="footer ">
+        <div class="container">
+            <strong>Copyright 2016</strong>  SU of Software Engineering, Tongji University. All Rights Reserved. 
+            <p>Powered by Lisirrx</p>
+        </div>
+    </footer>
 {% endblock %}
+
+
 
 {% block scripts %}
 
 {% endblock %}
+
+

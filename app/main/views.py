@@ -26,6 +26,12 @@ def index():
         session['obey_swap'] = form.obey_swap.data
         session['turn_major'] = form.turn_major.data
 
+        sum = ''
+        for x in form.add_teams.data:
+            sum = sum + ' ' + x   
+            
+        session['add_teams'] = sum
+
         if Student.query.filter_by(id=form.id_code.data).first() is not None:
             flash(u'你已经完成报名')
             return redirect(url_for('main.index'))
@@ -35,7 +41,7 @@ def index():
                           skill=session['skill'], reason=session['reason'],phone_number = session['phone_number'],
                           class_number=session['class_number'], native_place = session['native_place'],
                           former_job = session['former_job'], former_experience = session['former_experience'],
-                           expection =  session['expection'], obey_swap =session['obey_swap'], turn_major = session['turn_major'],gender = session['gender'])
+                           expection =  session['expection'], obey_swap =session['obey_swap'], turn_major = session['turn_major'],gender = session['gender'], add_teams = session['add_teams'])
 
         db.session.add(student)
         db.session.commit()

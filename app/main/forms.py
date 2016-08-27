@@ -1,11 +1,12 @@
 from flask_wtf import Form
-from wtforms import StringField, SubmitField, SelectField, TextAreaField, BooleanField
+from wtforms import StringField, SubmitField, SelectField, TextAreaField, BooleanField, SelectMultipleField
 from wtforms.validators import Required
 
 
 class InputForm(Form):
     departments = [('请选择', '请选择'), ('宣传部', '宣传部'), ('文艺部', '文艺部'),
                    ('体育部', '体育部'), ('外联部', '外联部'), ('学术部', '学术部'), ('组织部', '组织部')]
+    teams = [('志愿者中队', '志愿者中队'),('啦啦队', '啦啦队'),('足球队', '足球队'),('篮球队', '篮球队')]
     name = StringField('姓名', validators=[Required()])
     gender = StringField('性别', validators=[Required()])
     id_code = StringField('学号', validators=[Required()])
@@ -25,7 +26,8 @@ class InputForm(Form):
     skill = TextAreaField('爱好特长', validators=[Required()])
 
 
-
+    
+    add_teams = SelectMultipleField('是否想加入以下团学联分队（多选）',choices = teams)
 
     reason = TextAreaField('请给我们一个选择你的理由', validators=[Required()])
     former_experience = TextAreaField('谈谈你在在学生工作和其他方面的经历', validators=[Required()])
