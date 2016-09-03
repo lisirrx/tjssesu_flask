@@ -1,18 +1,21 @@
+# -*- coding: utf-8 -*-
 from flask_wtf import Form
 from wtforms import StringField, SubmitField, SelectField, TextAreaField, BooleanField, SelectMultipleField
 from wtforms.validators import Required
 
 
 class InputForm(Form):
+    gender_select = [('男','男'),('女','女')]
+    classes_select = [('1','1'),('2','2'),('3','3'),('4','4')]
     departments = [('请选择', '请选择'), ('宣传部', '宣传部'), ('文艺部', '文艺部'),
-                   ('体育部', '体育部'), ('外联部', '外联部'), ('学术部', '学术部'), ('组织部', '组织部')]
+                   ('体育部', '体育部'), ('外联部', '外联部'), ('学术部', '学术部'), ('组织部', '组织部'),('秘书处', '秘书处')]
     teams = [('志愿者中队', '志愿者中队'),('啦啦队', '啦啦队'),('足球队', '足球队'),('篮球队', '篮球队')]
     name = StringField('姓名', validators=[Required()])
-    gender = StringField('性别', validators=[Required()])
+    gender = SelectField('性别', choices=gender_select)
     id_code = StringField('学号', validators=[Required()])
 
     phone_number = StringField('手机号码', validators=[Required()])
-    class_number = StringField('班级', validators=[Required()])
+    class_number = SelectField('班级', choices=classes_select)
     native_place = StringField('籍贯', validators=[Required()])
     email = StringField('邮箱', validators=[Required()])
     
